@@ -1,8 +1,10 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
+val kotlin_serialization = "0.20.0"
+
 plugins {
     kotlin("multiplatform")
-//    kotlin("plugin.serialization")
+    kotlin("plugin.serialization") version "1.3.70"
 }
 
 kotlin {
@@ -23,19 +25,21 @@ kotlin {
 
     jvm("android")
 
+    println("$kotlin_serialization")
+
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
-//        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$kotlin_serialization")
     }
 
     sourceSets["androidMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
-//        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:$kotlin_serialization")
     }
 
     sourceSets["iosMain"].dependencies {
 //        implementation("org.jetbrains.kotlin:kotlin-stdlib-native")
-//        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$kotlin_serialization")
     }
 }
 
@@ -62,3 +66,4 @@ val packForXcode by tasks.creating(Sync::class) {
 }
 
 tasks.getByName("build").dependsOn(packForXcode)
+
