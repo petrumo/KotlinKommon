@@ -1,8 +1,8 @@
 import XCTest
-import app
+import SharedCode
 
 class iosAppTests: XCTestCase {
     func testExample() {
-        assert(Sample().checkMe() == 7)
+        assert(!CommonKt.createApplicationScreenMessage().isEmpty)
     }
 }

@@ -1,10 +1,10 @@
 import UIKit
-import app
+import SharedCode
 
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        label.text = Proxy().proxyHello()
+        label.text = CommonKt.createApplicationScreenMessage()
     }
 
     override func didReceiveMemoryWarning() {
