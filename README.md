@@ -7,9 +7,9 @@ Kotlin multiplatform (ios &amp; android) shared code experimental
 
 * [Download](https://www.oracle.com/java/technologies/javase/jdk14-archive-downloads.html) the JDK.
 
-* Set ANDROID_ROOT_SDK variable on your terminal to your sdk location (example: /Users/your_user/Library/Android/sdk)
+* Set ANDROID\_ROOT\_SDK variable on your terminal to your sdk location (example: /Users/your_user/Library/Android/sdk)
 
-* Set JAVA_HOME variable on your terminal to your JDK location. You can use: 
+* Set JAVA\_HOME variable on your terminal to your JDK location. You can use: 
 
 	`export JAVA_HOME= $(/usr/libexec/java_home -v your_version)`
 	
